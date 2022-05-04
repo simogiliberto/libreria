@@ -35,4 +35,18 @@ int inserimento(Anag libro[])
   }
   return n;
 }
+void visualizza(Anag libro[], int n)
+{
+    for(int i = 0; i < n; i++)
+    {
+        cout<<endl;
+        cout<<"CODICE ISBN : "<<libro[i].codice<<endl;
+        cout<<"TITOLO: "<<libro[i].titolo<<endl;
+        cout<<"AUTORE: "<<libro[i].autore<<endl;
+        cout<<"EDITORE: "<<libro[i].editore<<endl;
+        cout<<"ANNO DI PUBBLICAZIONE: "<<libro[i].anno_pubb<<endl;
+        cout<<"PREZZO: "<<libro[i].prezzo<<endl;
+        cout<<"TAG DEL GENERE: "<<libro[i].genere<<endl;
+    }
 
+}
