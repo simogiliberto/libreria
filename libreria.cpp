@@ -4,8 +4,9 @@ using namespace std;
 struct Anag
 {
   
-  string titolo, autore,editore,anno_pubb,codice,genere;
+  string titolo, autore,editore,codice,genere;
   float prezzo;
+  int anno_pubb;
  
 };
 
@@ -49,4 +50,18 @@ void visualizza(Anag libro[], int n)
         cout<<"TAG DEL GENERE: "<<libro[i].genere<<endl;
     }
 
+}
+void elimina(Anag libro[], int n)
+{
+    for(int i = 0; i < n; i++)
+    {
+        cout<<endl;
+        libro[i].codice="";
+        libro[i].titolo="";
+        libro[i].autore="";
+        libro[i].editore="";
+        libro[i].anno_pubb=0;
+        libro[i].prezzo=0;
+        libro[i].genere="";
+    }
 }
