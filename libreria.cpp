@@ -114,9 +114,45 @@ void cerca(Anag libro[], string cod)
 	{
 	}
 }
-void modifica(Anag libro[], int n)
+void modifica(Anag libro[], string cod)
 {
-	
+	int check=0;
+    for(int i = 0; i < 50; i++)
+    {
+    	if(libro[i].codice==cod)
+        {
+        	cout<<endl;
+	        cout<<"Modififica le info: "<<endl;
+	        cout<<"codice ISBN: ";
+		    cin>> libro[i].codice;
+		    cout<<"TITOLO del libro: ";
+		    cin>> libro[i].titolo;
+		    cout<<"Autore: ";
+		    cin>>libro[i].autore;
+		    cout<<"Editore: ";
+		    cin>>libro[i].editore;
+		    cout<<"Anno di Pubblicazione: ";
+		    cin>>libro[i].anno_pubb;
+		    cout<<" Tag del Genere: ";
+		    cin>>libro[i].genere;
+		    cout<<"Prezzo: ";
+		    cin>>libro[i].prezzo;
+		    cout<<endl;
+	        check = 1;
+	        
+		}
+		else
+		{
+			
+		}
+    }
+    if(check==0)
+    {
+    	cout<<"Codice non trovato";
+	}
+	else
+	{
+	}
 }
 void menu(Anag libro[], int n, string cod)
 {
@@ -165,8 +201,14 @@ void menu(Anag libro[], int n, string cod)
         }
         else if(scelta==5)
         {
-            cout<<endl;
-            modifica(libro, n);
+            
+			cout<<endl;
+            string cod;
+			cout<<endl;
+            cout<<"inserisci il codice ISBN: ";
+            cin>>cod;
+			cout<<endl;
+            modifica(libro, cod);
             cout<<endl;
         }
        
