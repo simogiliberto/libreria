@@ -51,29 +51,74 @@ void visualizza(Anag libro[], int n)
     }
 
 }
-void elimina(Anag libro[], int n)
+void elimina(Anag libro[], string cod)
 {
-    for(int i = 0; i < n; i++)
+	int check=0;
+    for(int i = 0; i < 50; i++)
     {
-        cout<<endl;
-        libro[i].codice="";
-        libro[i].titolo="";
-        libro[i].autore="";
-        libro[i].editore="";
-        libro[i].anno_pubb=0;
-        libro[i].prezzo=0;
-        libro[i].genere="";
+    	if(libro[i].codice==cod)
+        {
+        	cout<<endl;
+        	libro[i].codice="";
+        	libro[i].titolo="";
+	        libro[i].autore="";
+	        libro[i].editore="";
+	        libro[i].anno_pubb=0;
+	        libro[i].prezzo=0;
+	        libro[i].genere="";	
+	        check = 1;
+	        
+		}
+		else
+		{
+			
+		}
     }
+    if(check==0)
+    {
+    	cout<<"Codice non trovato";
+	}
+	else
+	{
+		cout<<"Eliminazione avvenuta";
+	}
 }
-void cerca(Anag libro[], int n)
+void cerca(Anag libro[], string cod)
 {
-	
+	int check=0;
+    for(int i = 0; i < 50; i++)
+    {
+    	if(libro[i].codice==cod)
+        {
+        	cout<<endl;
+	        cout<<"CODICE ISBN : "<<libro[i].codice<<endl;
+	        cout<<"TITOLO: "<<libro[i].titolo<<endl;
+	        cout<<"AUTORE: "<<libro[i].autore<<endl;
+	        cout<<"EDITORE: "<<libro[i].editore<<endl;
+	        cout<<"ANNO DI PUBBLICAZIONE: "<<libro[i].anno_pubb<<endl;
+	        cout<<"PREZZO: "<<libro[i].prezzo<<endl;
+	        cout<<"TAG DEL GENERE: "<<libro[i].genere<<endl;
+	        check = 1;
+	        
+		}
+		else
+		{
+			
+		}
+    }
+    if(check==0)
+    {
+    	cout<<"Codice non trovato";
+	}
+	else
+	{
+	}
 }
 void modifica(Anag libro[], int n)
 {
 	
 }
-void menu(Anag libro[], int n)
+void menu(Anag libro[], int n, string cod)
 {
     int scelta;
     do
@@ -101,14 +146,21 @@ void menu(Anag libro[], int n)
         }
         else if(scelta==3)
         {
-            cout<<endl;
-            elimina(libro, n);
+            string cod;
+			cout<<endl;
+            cout<<"inserisci il codice ISBN: ";
+            cin>>cod;
+            elimina(libro, cod);
             cout<<endl;
         }
         else if(scelta==4)
         {
             cout<<endl;
-            cerca(libro, n);
+            string cod;
+			cout<<endl;
+            cout<<"inserisci il codice ISBN: ";
+            cin>>cod;
+			cerca(libro, cod);
             cout<<endl;
         }
         else if(scelta==5)
@@ -121,14 +173,16 @@ void menu(Anag libro[], int n)
 
     }while(scelta<6);
     cout<<"Esco...."<<endl;
+    
 }
 
 int main()
 {
     int n = 0;
+    string cod="";
     Anag libro[50];
 
-    menu(libro, n);
+    menu(libro, n, cod);
 
 
     return 0;
