@@ -13,7 +13,7 @@ struct Anag
 int inserimento(Anag libro[])
 {
   int n;
-  cout<<"inserisci nuovo libro"<<endl;
+  cout<<"inserisci numero dei libri"<<endl;
   cin>>n;
 
   for(int i = 0; i < n; i++)
@@ -64,4 +64,72 @@ void elimina(Anag libro[], int n)
         libro[i].prezzo=0;
         libro[i].genere="";
     }
+}
+void cerca(Anag libro[], int n)
+{
+	
+}
+void modifica(Anag libro[], int n)
+{
+	
+}
+void menu(Anag libro[], int n)
+{
+    int scelta;
+    do
+    {
+        cout<<"MENU'"<<endl;
+        cout<<"1) Inserimento"<<endl;
+        cout<<"2) Stampa"<<endl;
+        cout<<"3) elimina"<<endl;
+        cout<<"4) cerca "<<endl;
+        cout<<"5) modifica campi"<<endl;
+        cout<<"6) USCITA"<<endl;
+        cin>>scelta;
+
+        if(scelta==1)
+        {
+            cout<<endl;
+            n = inserimento(libro);
+            cout<<endl;
+        }
+        else if(scelta==2)
+        {
+            cout<<endl;
+            visualizza(libro, n);
+            cout<<endl;
+        }
+        else if(scelta==3)
+        {
+            cout<<endl;
+            elimina(libro, n);
+            cout<<endl;
+        }
+        else if(scelta==4)
+        {
+            cout<<endl;
+            cerca(libro, n);
+            cout<<endl;
+        }
+        else if(scelta==5)
+        {
+            cout<<endl;
+            modifica(libro, n);
+            cout<<endl;
+        }
+       
+
+    }while(scelta<6);
+    cout<<"Esco...."<<endl;
+}
+
+int main()
+{
+    int n = 0;
+    Anag libro[50];
+
+    menu(libro, n);
+
+
+    return 0;
 }
